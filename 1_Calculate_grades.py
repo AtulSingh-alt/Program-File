@@ -1,4 +1,4 @@
-# 1) Calculate the grade with if else
+# 1) Calculate the grade with if else statement
 from selectors import SelectSelector
 
 marks = int(input("Enter your score : "))
