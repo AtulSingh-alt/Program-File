@@ -1,5 +1,4 @@
 # 1) Calculate the grade with if else
-from selectors import SelectSelector
 
 marks = int(input("Enter your score : "))
 if marks >= 90:
