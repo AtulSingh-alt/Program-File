@@ -12,4 +12,3 @@ elif marks >= 55:
     print("Your grade is D")
 else:
     print("Sorry! You are fail")
-SelectSelector
