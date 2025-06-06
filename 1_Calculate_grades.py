@@ -1,4 +1,4 @@
-# 1) Calculate the grade with if else statement
+# 1) Calculate the grade with if else statement!
 
 marks = int(input("Enter your score : "))
 if marks >= 90:
