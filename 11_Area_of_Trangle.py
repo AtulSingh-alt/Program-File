@@ -1,4 +1,4 @@
-# 10) calculate the area of trangle
+#  calculate the area of trangle
 
 base = float(input("Enter the value of base : "))
 height = float(input("Enter the value of height : "))
