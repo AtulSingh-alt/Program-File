@@ -1,4 +1,4 @@
-# Count the Number of Words and Characters
+# Count Number of Lowercase Characters
 
 santence=input("Enter the string:")
 char=0
