@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3 (Python 3.13.3 on win32)" generated="2025-07-10T11:37:24.207499" rpa="false" schemaversion="5">
+<suite id="s1" name="MMT" source="C:\Users\atul.singh\PycharmProjects\My_robotic_work\MMT_Demo\MMT.robot">
+<test id="s1-t1" name="MMT Flow" line="12">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-07-10T11:37:24.760417" level="INFO">Opening browser 'Chrome' to base url 'https://www.makemytrip.com/'.</msg>
+<msg time="2025-07-10T11:37:24.994681" level="WARN">The chromedriver version (137.0.7151.68) detected in PATH at C:\Program Files\Python313\Scripts\chromedriver.exe might not be compatible with the detected chrome version (138.0.7204.100); currently, chromedriver 138.0.7204.94 is recommended for chrome 138.*, so it is advised to delete the driver in PATH and retry</msg>
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-07-10T11:37:24.760181" elapsed="2.978206"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-07-10T11:37:27.738891" elapsed="0.101762"/>
+</kw>
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>.5</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2025-07-10T11:37:27.841302" elapsed="0.000475"/>
+</kw>
+<kw name="Set Selenium Timeout" owner="SeleniumLibrary">
+<arg>10</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" start="2025-07-10T11:37:27.842282" elapsed="0.502908"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//span[contains(@class,'commonModal__close')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-10T11:37:28.345559" elapsed="1.594242"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-10T11:37:29.941183" level="INFO">Clicking element 'xpath=//span[contains(@class,'commonModal__close')]'.</msg>
+<arg>xpath=//span[contains(@class,'commonModal__close')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-10T11:37:29.940699" elapsed="1.180746"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=(//span[text() = 'Flights'])[1]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-10T11:37:31.122059" elapsed="1.035507"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-10T11:37:32.158482" level="INFO">Clicking element 'xpath=(//span[text() = 'Flights'])[1]'.</msg>
+<arg>xpath=(//span[text() = 'Flights'])[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-10T11:37:32.158044" elapsed="1.897502"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-10T11:37:34.056598" level="INFO">Clicking element 'xpath=(//span[contains(@class,'tabsCircle appendRight5')])[2]'.</msg>
+<arg>xpath=(//span[contains(@class,'tabsCircle appendRight5')])[2]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-10T11:37:34.056097" elapsed="1.244668"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-10T11:37:35.302250" level="INFO">Clicking element 'xpath=(//span[contains(@class,'tabsCircle appendRight5')])[1]'.</msg>
+<arg>xpath=(//span[contains(@class,'tabsCircle appendRight5')])[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-10T11:37:35.301809" elapsed="1.145447"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-10T11:37:36.447896" level="INFO">Clicking element 'xpath=(//input[contains(@type,'text')])[1]'.</msg>
+<arg>xpath=(//input[contains(@type,'text')])[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-10T11:37:36.447638" elapsed="1.104270"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=(//input[contains(@type,'text')])[1]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-10T11:37:37.552383" elapsed="1.027687"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-10T11:37:38.580662" level="INFO">Typing text 'Delhi' into text field 'xpath=//input[contains(@placeholder,'From')]'.</msg>
+<arg>xpath=//input[contains(@placeholder,'From')]</arg>
+<arg>Delhi</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-10T11:37:38.580482" elapsed="1.616124"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="react-autowhatever-1-section-0-item-0"]/div/div/p[1]/span[1]/span</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-10T11:37:40.197247" elapsed="1.039210"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-10T11:37:41.237900" level="INFO">Clicking element 'xpath=//*[@id="react-autowhatever-1-section-0-item-0"]/div/div/p[1]/span[1]/span'.</msg>
+<arg>xpath=//*[@id="react-autowhatever-1-section-0-item-0"]/div/div/p[1]/span[1]/span</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-10T11:37:41.237413" elapsed="1.122206"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-10T11:37:42.361063" level="INFO">Clicking element 'xpath=(//input[contains(@type,'text')])[2]'.</msg>
+<arg>xpath=(//input[contains(@type,'text')])[2]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-10T11:37:42.360573" elapsed="1.127353"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=(//input[contains(@type,'text')])[2]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-10T11:37:43.488268" elapsed="1.058883"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-10T11:37:44.548645" level="INFO">Typing text 'Varanasi' into text field 'xpath=//input[contains(@placeholder,'To')]'.</msg>
+<arg>xpath=//input[contains(@placeholder,'To')]</arg>
+<arg>Varanasi</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-10T11:37:44.548156" elapsed="1.611421"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="react-autowhatever-1-section-0-item-0"]/div/div/p[1]/span[1]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-10T11:37:46.160456" elapsed="1.053149"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-10T11:37:47.214857" level="INFO">Clicking element 'xpath=//*[@id="react-autowhatever-1-section-0-item-0"]/div/div/p[1]/span[1]'.</msg>
+<arg>xpath=//*[@id="react-autowhatever-1-section-0-item-0"]/div/div/p[1]/span[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-10T11:37:47.214433" elapsed="1.123569"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-10T11:37:48.339424" level="INFO">Clicking element 'xpath=//*[@id="top-banner"]/div[2]/div/div/div/div/div/div[2]/div[1]/div[3]/div[1]/div/div/div/div[2]/div/div[2]/div[1]/div[3]/div[3]/div[2]/div'.</msg>
+<arg>xpath=//*[@id="top-banner"]/div[2]/div/div/div/div/div/div[2]/div[1]/div[3]/div[1]/div/div/div/div[2]/div/div[2]/div[1]/div[3]/div[3]/div[2]/div</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-10T11:37:48.338934" elapsed="1.135213"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-10T11:37:49.475616" level="INFO">Clicking element 'xpath=//a[contains(@class,'primaryBtn font24 latoBold widgetSearchBtn ')]'.</msg>
+<arg>xpath=//a[contains(@class,'primaryBtn font24 latoBold widgetSearchBtn ')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-10T11:37:49.475098" elapsed="1.240891"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-07-10T11:37:55.717771" level="INFO">Slept 5 seconds.</msg>
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-07-10T11:37:50.716926" elapsed="5.001124"/>
+</kw>
+<status status="PASS" start="2025-07-10T11:37:24.759222" elapsed="30.959771"/>
+</test>
+<status status="PASS" start="2025-07-10T11:37:24.209913" elapsed="31.511485"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="MMT" id="s1" pass="1" fail="0" skip="0">MMT</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-07-10T11:37:24.994681" level="WARN">The chromedriver version (137.0.7151.68) detected in PATH at C:\Program Files\Python313\Scripts\chromedriver.exe might not be compatible with the detected chrome version (138.0.7204.100); currently, chromedriver 138.0.7204.94 is recommended for chrome 138.*, so it is advised to delete the driver in PATH and retry</msg>
+</errors>
+</robot>

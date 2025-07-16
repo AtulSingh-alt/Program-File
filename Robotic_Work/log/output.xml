@@ -1,0 +1,1299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3 (Python 3.13.3 on win32)" generated="2025-07-11T12:25:22.672868" rpa="false" schemaversion="5">
+<suite id="s1" name="Agoda Full Flow" source="C:\Users\atul.singh\PycharmProjects\My_robotic_work\Agoda\Agoda_Full_Flow.robot">
+<test id="s1-t1" name="AGODA Full Flow" line="17">
+<kw name="Happy Flow">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-07-11T12:25:24.532699" level="INFO">Opening browser 'Chrome' to base url 'https://www.agoda.com/en-in/'.</msg>
+<msg time="2025-07-11T12:25:24.922689" level="WARN">The chromedriver version (137.0.7151.68) detected in PATH at C:\Program Files\Python313\Scripts\chromedriver.exe might not be compatible with the detected chrome version (138.0.7204.100); currently, chromedriver 138.0.7204.94 is recommended for chrome 138.*, so it is advised to delete the driver in PATH and retry</msg>
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-07-11T12:25:24.531168" elapsed="8.698579"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-07-11T12:25:33.230577" elapsed="0.071980"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-11T12:25:33.304922" level="INFO">Typing text 'Delhi' into text field 'xpath=//input[contains(@data-selenium,'textInput')]'.</msg>
+<arg>xpath=//input[contains(@data-selenium,'textInput')]</arg>
+<arg>Delhi</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-11T12:25:33.303516" elapsed="0.242701"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=(//li[contains(@data-selenium,'autosuggest-item')])[1]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-11T12:25:33.546829" elapsed="0.491782"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-11T12:25:34.040086" level="INFO">Clicking element 'xpath=(//li[contains(@data-selenium,'autosuggest-item')])[1]'.</msg>
+<arg>xpath=(//li[contains(@data-selenium,'autosuggest-item')])[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-11T12:25:34.039264" elapsed="0.150556"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=(//i[contains(@data-selenium,'ficon-icon-box')])[2]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-11T12:25:34.190764" elapsed="0.032833"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-11T12:25:34.225286" level="INFO">Clicking element 'xpath=(//i[contains(@data-selenium,'ficon-icon-box')])[2]'.</msg>
+<arg>xpath=(//i[contains(@data-selenium,'ficon-icon-box')])[2]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-11T12:25:34.224371" elapsed="0.152885"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//button[contains(@data-selenium,'searchButton')]/div/div/span</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-11T12:25:34.377903" elapsed="0.048510"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-11T12:25:34.428295" level="INFO">Clicking element 'xpath=//button[contains(@data-selenium,'searchButton')]/div/div/span'.</msg>
+<arg>xpath=//button[contains(@data-selenium,'searchButton')]/div/div/span</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-11T12:25:34.427439" elapsed="5.406763"/>
+</kw>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<msg time="2025-07-11T12:25:39.856811" level="INFO">${hotel_count} = 3</msg>
+<var>${hotel_count}</var>
+<arg>xpath=//h3[contains(@data-selenium,'hotel-name')]</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="PASS" start="2025-07-11T12:25:39.835053" elapsed="0.022298"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-07-11T12:25:39.862810" level="INFO">Executing JavaScript:
+window.scrollBy(0,1000)
+Without any arguments.</msg>
+<arg>window.scrollBy(0,1000)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-07-11T12:25:39.860991" elapsed="0.212539"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-07-11T12:25:44.076315" level="INFO">Slept 4 seconds.</msg>
+<arg>4</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-07-11T12:25:40.074242" elapsed="4.003383"/>
+</kw>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<msg time="2025-07-11T12:25:44.109028" level="INFO">${hotel_count} = 5</msg>
+<var>${hotel_count}</var>
+<arg>xpath=//h3[contains(@data-selenium,'hotel-name')]</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="PASS" start="2025-07-11T12:25:44.079316" elapsed="0.030170"/>
+</kw>
+<var name="${i}">0</var>
+<status status="PASS" start="2025-07-11T12:25:39.860293" elapsed="4.249537"/>
+</iter>
+<iter>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-07-11T12:25:44.113549" level="INFO">Executing JavaScript:
+window.scrollBy(0,1000)
+Without any arguments.</msg>
+<arg>window.scrollBy(0,1000)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-07-11T12:25:44.111184" elapsed="0.039102"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-07-11T12:25:48.153064" level="INFO">Slept 4 seconds.</msg>
+<arg>4</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-07-11T12:25:44.151044" elapsed="4.003106"/>
+</kw>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<msg time="2025-07-11T12:25:48.181947" level="INFO">${hotel_count} = 6</msg>
+<var>${hotel_count}</var>
+<arg>xpath=//h3[contains(@data-selenium,'hotel-name')]</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="PASS" start="2025-07-11T12:25:48.155729" elapsed="0.026623"/>
+</kw>
+<var name="${i}">1</var>
+<status status="PASS" start="2025-07-11T12:25:44.110372" elapsed="4.072491"/>
+</iter>
+<iter>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-07-11T12:25:48.186743" level="INFO">Executing JavaScript:
+window.scrollBy(0,1000)
+Without any arguments.</msg>
+<arg>window.scrollBy(0,1000)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-07-11T12:25:48.184944" elapsed="0.019302"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-07-11T12:25:52.208482" level="INFO">Slept 4 seconds.</msg>
+<arg>4</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-07-11T12:25:48.205785" elapsed="4.004011"/>
+</kw>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<msg time="2025-07-11T12:25:52.242646" level="INFO">${hotel_count} = 8</msg>
+<var>${hotel_count}</var>
+<arg>xpath=//h3[contains(@data-selenium,'hotel-name')]</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="PASS" start="2025-07-11T12:25:52.211519" elapsed="0.032016"/>
+</kw>
+<var name="${i}">2</var>
+<status status="PASS" start="2025-07-11T12:25:48.183819" elapsed="4.060100"/>
+</iter>
+<iter>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-07-11T12:25:52.247607" level="INFO">Executing JavaScript:
+window.scrollBy(0,1000)
+Without any arguments.</msg>
+<arg>window.scrollBy(0,1000)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-07-11T12:25:52.245313" elapsed="0.020833"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-07-11T12:25:56.270127" level="INFO">Slept 4 seconds.</msg>
+<arg>4</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-07-11T12:25:52.267651" elapsed="4.003635"/>
+</kw>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<msg time="2025-07-11T12:25:56.302883" level="INFO">${hotel_count} = 10</msg>
+<var>${hotel_count}</var>
+<arg>xpath=//h3[contains(@data-selenium,'hotel-name')]</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="PASS" start="2025-07-11T12:25:56.273811" elapsed="0.029902"/>
+</kw>
+<var name="${i}">3</var>
+<status status="PASS" start="2025-07-11T12:25:52.244620" elapsed="4.059906"/>
+</iter>
+<iter>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-07-11T12:25:56.309808" level="INFO">Executing JavaScript:
+window.scrollBy(0,1000)
+Without any arguments.</msg>
+<arg>window.scrollBy(0,1000)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-07-11T12:25:56.307435" elapsed="0.020086"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-07-11T12:26:00.331054" level="INFO">Slept 4 seconds.</msg>
+<arg>4</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-07-11T12:25:56.328931" elapsed="4.003485"/>
+</kw>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<msg time="2025-07-11T12:26:00.364163" level="INFO">${hotel_count} = 13</msg>
+<var>${hotel_count}</var>
+<arg>xpath=//h3[contains(@data-selenium,'hotel-name')]</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="PASS" start="2025-07-11T12:26:00.334108" elapsed="0.030790"/>
+</kw>
+<var name="${i}">4</var>
+<status status="PASS" start="2025-07-11T12:25:56.305892" elapsed="4.059714"/>
+</iter>
+<iter>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-07-11T12:26:00.370575" level="INFO">Executing JavaScript:
+window.scrollBy(0,1000)
+Without any arguments.</msg>
+<arg>window.scrollBy(0,1000)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-07-11T12:26:00.368230" elapsed="0.018258"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-07-11T12:26:04.390057" level="INFO">Slept 4 seconds.</msg>
+<arg>4</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-07-11T12:26:00.387929" elapsed="4.003336"/>
+</kw>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<msg time="2025-07-11T12:26:04.420423" level="INFO">${hotel_count} = 16</msg>
+<var>${hotel_count}</var>
+<arg>xpath=//h3[contains(@data-selenium,'hotel-name')]</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="PASS" start="2025-07-11T12:26:04.392947" elapsed="0.028277"/>
+</kw>
+<var name="${i}">5</var>
+<status status="PASS" start="2025-07-11T12:26:00.366884" elapsed="4.054998"/>
+</iter>
+<iter>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-07-11T12:26:04.426994" level="INFO">Executing JavaScript:
+window.scrollBy(0,1000)
+Without any arguments.</msg>
+<arg>window.scrollBy(0,1000)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-07-11T12:26:04.425094" elapsed="0.016401"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-07-11T12:26:08.444844" level="INFO">Slept 4 seconds.</msg>
+<arg>4</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-07-11T12:26:04.442785" elapsed="4.003446"/>
+</kw>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<msg time="2025-07-11T12:26:08.483626" level="INFO">${hotel_count} = 19</msg>
+<var>${hotel_count}</var>
+<arg>xpath=//h3[contains(@data-selenium,'hotel-name')]</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="PASS" start="2025-07-11T12:26:08.448143" elapsed="0.036416"/>
+</kw>
+<var name="${i}">6</var>
+<status status="PASS" start="2025-07-11T12:26:04.423104" elapsed="4.062286"/>
+</iter>
+<iter>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-07-11T12:26:08.490675" level="INFO">Executing JavaScript:
+window.scrollBy(0,1000)
+Without any arguments.</msg>
+<arg>window.scrollBy(0,1000)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-07-11T12:26:08.488349" elapsed="0.015927"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-07-11T12:26:12.507393" level="INFO">Slept 4 seconds.</msg>
+<arg>4</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-07-11T12:26:08.505425" elapsed="4.003270"/>
+</kw>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<msg time="2025-07-11T12:26:12.538419" level="INFO">${hotel_count} = 22</msg>
+<var>${hotel_count}</var>
+<arg>xpath=//h3[contains(@data-selenium,'hotel-name')]</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="PASS" start="2025-07-11T12:26:12.510679" elapsed="0.028679"/>
+</kw>
+<var name="${i}">7</var>
+<status status="PASS" start="2025-07-11T12:26:08.486888" elapsed="4.053303"/>
+</iter>
+<iter>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-07-11T12:26:12.546102" level="INFO">Executing JavaScript:
+window.scrollBy(0,1000)
+Without any arguments.</msg>
+<arg>window.scrollBy(0,1000)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-07-11T12:26:12.543384" elapsed="0.022236"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-07-11T12:26:16.569459" level="INFO">Slept 4 seconds.</msg>
+<arg>4</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-07-11T12:26:12.567202" elapsed="4.003438"/>
+</kw>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<msg time="2025-07-11T12:26:16.601830" level="INFO">${hotel_count} = 25</msg>
+<var>${hotel_count}</var>
+<arg>xpath=//h3[contains(@data-selenium,'hotel-name')]</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="PASS" start="2025-07-11T12:26:16.572131" elapsed="0.030626"/>
+</kw>
+<var name="${i}">8</var>
+<status status="PASS" start="2025-07-11T12:26:12.541679" elapsed="4.061951"/>
+</iter>
+<iter>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-07-11T12:26:16.608809" level="INFO">Executing JavaScript:
+window.scrollBy(0,1000)
+Without any arguments.</msg>
+<arg>window.scrollBy(0,1000)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-07-11T12:26:16.606499" elapsed="0.019268"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-07-11T12:26:20.629799" level="INFO">Slept 4 seconds.</msg>
+<arg>4</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-07-11T12:26:16.627235" elapsed="4.004023"/>
+</kw>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<msg time="2025-07-11T12:26:20.665252" level="INFO">${hotel_count} = 28</msg>
+<var>${hotel_count}</var>
+<arg>xpath=//h3[contains(@data-selenium,'hotel-name')]</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="PASS" start="2025-07-11T12:26:20.632884" elapsed="0.033274"/>
+</kw>
+<var name="${i}">9</var>
+<status status="PASS" start="2025-07-11T12:26:16.605060" elapsed="4.061940"/>
+</iter>
+<var>${i}</var>
+<value>0</value>
+<value>10</value>
+<status status="PASS" start="2025-07-11T12:25:39.858422" elapsed="40.809377"/>
+</for>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Total Hotels counts:${hotel_count}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-07-11T12:26:20.669404" elapsed="0.003010"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-07-11T12:26:25.675913" level="INFO">Slept 5 seconds.</msg>
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-07-11T12:26:20.673772" elapsed="5.003120"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-07-11T12:26:25.709865" level="INFO">${name} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="872b0bac070b095069b91f0748345235", element="f.BC5546B69D70AC8462B29A557681B3F1.d.35767250B6EF2302EBB992A5A2110CF0.e.8311")&gt;, &lt;selenium.webdr...</msg>
+<var>${name}</var>
+<arg>xpath=//h3[contains(@data-selenium,'hotel-name')]</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-07-11T12:26:25.678483" elapsed="0.032759"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-07-11T12:26:25.739774" level="INFO">${price} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="872b0bac070b095069b91f0748345235", element="f.BC5546B69D70AC8462B29A557681B3F1.d.35767250B6EF2302EBB992A5A2110CF0.e.8409")&gt;, &lt;selenium.webdr...</msg>
+<var>${price}</var>
+<arg>xpath=//span[contains(@data-selenium,'display-price')]</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-07-11T12:26:25.712670" elapsed="0.028074"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-07-11T12:26:25.780202" level="INFO">${hotel_name_text} = Hotel Roma Deluxe</msg>
+<var>${hotel_name_text}</var>
+<arg>${name[${i}]}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-11T12:26:25.744750" elapsed="0.035789"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-07-11T12:26:25.783352" level="INFO">${hotel_name_strip} = Hotel Roma Deluxe</msg>
+<var>${hotel_name_strip}</var>
+<arg>${hotel_name_text}</arg>
+<arg>,</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-07-11T12:26:25.781082" elapsed="0.002568"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2025-07-11T12:26:25.785274" level="INFO">${hotel_name} = Hotel Roma Deluxe</msg>
+<var>${hotel_name}</var>
+<arg>${hotel_name_strip}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2025-07-11T12:26:25.784202" elapsed="0.001347"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${HOTEL_NAMES}</arg>
+<arg>${hotel_name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-07-11T12:26:25.786023" elapsed="0.000940"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-07-11T12:26:25.813533" level="INFO">${price_value} = 778</msg>
+<var>${price_value}</var>
+<arg>${price[${i}]}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-11T12:26:25.787450" elapsed="0.026786"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-07-11T12:26:25.819293" level="INFO">${price_new} = 778</msg>
+<var>${price_new}</var>
+<arg>${price_value}</arg>
+<arg>,</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-07-11T12:26:25.815619" elapsed="0.004420"/>
+</kw>
+<kw name="Convert To Integer" owner="BuiltIn">
+<msg time="2025-07-11T12:26:25.827049" level="INFO">${hotel_price} = 778</msg>
+<var>${hotel_price}</var>
+<arg>${price_new}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<status status="PASS" start="2025-07-11T12:26:25.822308" elapsed="0.006117"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${HOTEL_PRICES}</arg>
+<arg>${hotel_price}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-07-11T12:26:25.829075" elapsed="0.001106"/>
+</kw>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${HOTEL_KEY_VALUE}</arg>
+<arg>${hotel_name}=${hotel_price}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" start="2025-07-11T12:26:25.831431" elapsed="0.003279"/>
+</kw>
+<var name="${i}">0</var>
+<status status="PASS" start="2025-07-11T12:26:25.743269" elapsed="0.092280"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-07-11T12:26:25.859192" level="INFO">${hotel_name_text} = Hotel Almora Delhi Airport</msg>
+<var>${hotel_name_text}</var>
+<arg>${name[${i}]}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-11T12:26:25.838645" elapsed="0.020901"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-07-11T12:26:25.862572" level="INFO">${hotel_name_strip} = Hotel Almora Delhi Airport</msg>
+<var>${hotel_name_strip}</var>
+<arg>${hotel_name_text}</arg>
+<arg>,</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-07-11T12:26:25.860071" elapsed="0.002747"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2025-07-11T12:26:25.864521" level="INFO">${hotel_name} = Hotel Almora Delhi Airport</msg>
+<var>${hotel_name}</var>
+<arg>${hotel_name_strip}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2025-07-11T12:26:25.863508" elapsed="0.001533"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${HOTEL_NAMES}</arg>
+<arg>${hotel_name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-07-11T12:26:25.865639" elapsed="0.001039"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-07-11T12:26:25.888004" level="INFO">${price_value} = 1,947</msg>
+<var>${price_value}</var>
+<arg>${price[${i}]}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-11T12:26:25.867321" elapsed="0.021040"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-07-11T12:26:25.891704" level="INFO">${price_new} = 1947</msg>
+<var>${price_new}</var>
+<arg>${price_value}</arg>
+<arg>,</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-07-11T12:26:25.888971" elapsed="0.003154"/>
+</kw>
+<kw name="Convert To Integer" owner="BuiltIn">
+<msg time="2025-07-11T12:26:25.894886" level="INFO">${hotel_price} = 1947</msg>
+<var>${hotel_price}</var>
+<arg>${price_new}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<status status="PASS" start="2025-07-11T12:26:25.893014" elapsed="0.002719"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${HOTEL_PRICES}</arg>
+<arg>${hotel_price}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-07-11T12:26:25.896815" elapsed="0.001191"/>
+</kw>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${HOTEL_KEY_VALUE}</arg>
+<arg>${hotel_name}=${hotel_price}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" start="2025-07-11T12:26:25.898566" elapsed="0.001129"/>
+</kw>
+<var name="${i}">1</var>
+<status status="PASS" start="2025-07-11T12:26:25.837312" elapsed="0.062702"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-07-11T12:26:25.922285" level="INFO">${hotel_name_text} = Hotel The Rise</msg>
+<var>${hotel_name_text}</var>
+<arg>${name[${i}]}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-11T12:26:25.901261" elapsed="0.021375"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-07-11T12:26:25.925570" level="INFO">${hotel_name_strip} = Hotel The Rise</msg>
+<var>${hotel_name_strip}</var>
+<arg>${hotel_name_text}</arg>
+<arg>,</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-07-11T12:26:25.923208" elapsed="0.002687"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2025-07-11T12:26:25.927407" level="INFO">${hotel_name} = Hotel The Rise</msg>
+<var>${hotel_name}</var>
+<arg>${hotel_name_strip}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2025-07-11T12:26:25.926379" elapsed="0.001606"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${HOTEL_NAMES}</arg>
+<arg>${hotel_name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-07-11T12:26:25.928926" elapsed="0.001429"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-07-11T12:26:25.951259" level="INFO">${price_value} = 2,035</msg>
+<var>${price_value}</var>
+<arg>${price[${i}]}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-11T12:26:25.930952" elapsed="0.020666"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-07-11T12:26:25.956563" level="INFO">${price_new} = 2035</msg>
+<var>${price_new}</var>
+<arg>${price_value}</arg>
+<arg>,</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-07-11T12:26:25.952693" elapsed="0.004349"/>
+</kw>
+<kw name="Convert To Integer" owner="BuiltIn">
+<msg time="2025-07-11T12:26:25.960032" level="INFO">${hotel_price} = 2035</msg>
+<var>${hotel_price}</var>
+<arg>${price_new}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<status status="PASS" start="2025-07-11T12:26:25.958037" elapsed="0.002579"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${HOTEL_PRICES}</arg>
+<arg>${hotel_price}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-07-11T12:26:25.961572" elapsed="0.001858"/>
+</kw>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${HOTEL_KEY_VALUE}</arg>
+<arg>${hotel_name}=${hotel_price}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" start="2025-07-11T12:26:25.964533" elapsed="0.002101"/>
+</kw>
+<var name="${i}">2</var>
+<status status="PASS" start="2025-07-11T12:26:25.900688" elapsed="0.066485"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-07-11T12:26:25.999308" level="INFO">${hotel_name_text} = The Oberoi, Gurgaon</msg>
+<var>${hotel_name_text}</var>
+<arg>${name[${i}]}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-11T12:26:25.969368" elapsed="0.030579"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-07-11T12:26:26.003889" level="INFO">${hotel_name_strip} = The Oberoi Gurgaon</msg>
+<var>${hotel_name_strip}</var>
+<arg>${hotel_name_text}</arg>
+<arg>,</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-07-11T12:26:26.000951" elapsed="0.003275"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2025-07-11T12:26:26.005859" level="INFO">${hotel_name} = The Oberoi Gurgaon</msg>
+<var>${hotel_name}</var>
+<arg>${hotel_name_strip}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2025-07-11T12:26:26.004845" elapsed="0.001299"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${HOTEL_NAMES}</arg>
+<arg>${hotel_name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-07-11T12:26:26.006647" elapsed="0.000865"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-07-11T12:26:26.027087" level="INFO">${price_value} = 16,000</msg>
+<var>${price_value}</var>
+<arg>${price[${i}]}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-11T12:26:26.007999" elapsed="0.019657"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-07-11T12:26:26.031333" level="INFO">${price_new} = 16000</msg>
+<var>${price_new}</var>
+<arg>${price_value}</arg>
+<arg>,</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-07-11T12:26:26.028680" elapsed="0.003032"/>
+</kw>
+<kw name="Convert To Integer" owner="BuiltIn">
+<msg time="2025-07-11T12:26:26.033912" level="INFO">${hotel_price} = 16000</msg>
+<var>${hotel_price}</var>
+<arg>${price_new}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<status status="PASS" start="2025-07-11T12:26:26.032510" elapsed="0.001784"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${HOTEL_PRICES}</arg>
+<arg>${hotel_price}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-07-11T12:26:26.034992" elapsed="0.001195"/>
+</kw>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${HOTEL_KEY_VALUE}</arg>
+<arg>${hotel_name}=${hotel_price}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" start="2025-07-11T12:26:26.036900" elapsed="0.001906"/>
+</kw>
+<var name="${i}">3</var>
+<status status="PASS" start="2025-07-11T12:26:25.968447" elapsed="0.070798"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-07-11T12:26:26.060161" level="INFO">${hotel_name_text} = The LaLiT New Delhi</msg>
+<var>${hotel_name_text}</var>
+<arg>${name[${i}]}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-11T12:26:26.040820" elapsed="0.019813"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-07-11T12:26:26.063814" level="INFO">${hotel_name_strip} = The LaLiT New Delhi</msg>
+<var>${hotel_name_strip}</var>
+<arg>${hotel_name_text}</arg>
+<arg>,</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-07-11T12:26:26.061361" elapsed="0.002815"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2025-07-11T12:26:26.065941" level="INFO">${hotel_name} = The LaLiT New Delhi</msg>
+<var>${hotel_name}</var>
+<arg>${hotel_name_strip}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2025-07-11T12:26:26.064949" elapsed="0.001237"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${HOTEL_NAMES}</arg>
+<arg>${hotel_name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-07-11T12:26:26.066683" elapsed="0.000899"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-07-11T12:26:26.090980" level="INFO">${price_value} = 7,491</msg>
+<var>${price_value}</var>
+<arg>${price[${i}]}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-11T12:26:26.068103" elapsed="0.023921"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-07-11T12:26:26.097479" level="INFO">${price_new} = 7491</msg>
+<var>${price_new}</var>
+<arg>${price_value}</arg>
+<arg>,</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-07-11T12:26:26.093660" elapsed="0.004682"/>
+</kw>
+<kw name="Convert To Integer" owner="BuiltIn">
+<msg time="2025-07-11T12:26:26.103650" level="INFO">${hotel_price} = 7491</msg>
+<var>${hotel_price}</var>
+<arg>${price_new}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<status status="PASS" start="2025-07-11T12:26:26.100726" elapsed="0.003668"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${HOTEL_PRICES}</arg>
+<arg>${hotel_price}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-07-11T12:26:26.105851" elapsed="0.002282"/>
+</kw>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${HOTEL_KEY_VALUE}</arg>
+<arg>${hotel_name}=${hotel_price}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" start="2025-07-11T12:26:26.109679" elapsed="0.001663"/>
+</kw>
+<var name="${i}">4</var>
+<status status="PASS" start="2025-07-11T12:26:26.040138" elapsed="0.071776"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-07-11T12:26:26.141022" level="INFO">${hotel_name_text} = Sunday Hotels and Resort Gurgaon</msg>
+<var>${hotel_name_text}</var>
+<arg>${name[${i}]}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-11T12:26:26.114485" elapsed="0.027366"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-07-11T12:26:26.146310" level="INFO">${hotel_name_strip} = Sunday Hotels and Resort Gurgaon</msg>
+<var>${hotel_name_strip}</var>
+<arg>${hotel_name_text}</arg>
+<arg>,</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-07-11T12:26:26.143119" elapsed="0.003743"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2025-07-11T12:26:26.150405" level="INFO">${hotel_name} = Sunday Hotels and Resort Gurgaon</msg>
+<var>${hotel_name}</var>
+<arg>${hotel_name_strip}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2025-07-11T12:26:26.148116" elapsed="0.003160"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${HOTEL_NAMES}</arg>
+<arg>${hotel_name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-07-11T12:26:26.152604" elapsed="0.002739"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-07-11T12:26:26.181688" level="INFO">${price_value} = 7,200</msg>
+<var>${price_value}</var>
+<arg>${price[${i}]}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-11T12:26:26.156934" elapsed="0.025273"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-07-11T12:26:26.186421" level="INFO">${price_new} = 7200</msg>
+<var>${price_new}</var>
+<arg>${price_value}</arg>
+<arg>,</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-07-11T12:26:26.183088" elapsed="0.003773"/>
+</kw>
+<kw name="Convert To Integer" owner="BuiltIn">
+<msg time="2025-07-11T12:26:26.189156" level="INFO">${hotel_price} = 7200</msg>
+<var>${hotel_price}</var>
+<arg>${price_new}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<status status="PASS" start="2025-07-11T12:26:26.187673" elapsed="0.001887"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${HOTEL_PRICES}</arg>
+<arg>${hotel_price}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-07-11T12:26:26.190264" elapsed="0.001459"/>
+</kw>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${HOTEL_KEY_VALUE}</arg>
+<arg>${hotel_name}=${hotel_price}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" start="2025-07-11T12:26:26.192875" elapsed="0.001697"/>
+</kw>
+<var name="${i}">5</var>
+<status status="PASS" start="2025-07-11T12:26:26.113565" elapsed="0.081415"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-07-11T12:26:26.217484" level="INFO">${hotel_name_text} = Novotel New Delhi Aerocity</msg>
+<var>${hotel_name_text}</var>
+<arg>${name[${i}]}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-11T12:26:26.196672" elapsed="0.021839"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-07-11T12:26:26.224593" level="INFO">${hotel_name_strip} = Novotel New Delhi Aerocity</msg>
+<var>${hotel_name_strip}</var>
+<arg>${hotel_name_text}</arg>
+<arg>,</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-07-11T12:26:26.220476" elapsed="0.005009"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2025-07-11T12:26:26.227279" level="INFO">${hotel_name} = Novotel New Delhi Aerocity</msg>
+<var>${hotel_name}</var>
+<arg>${hotel_name_strip}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2025-07-11T12:26:26.226228" elapsed="0.001481"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${HOTEL_NAMES}</arg>
+<arg>${hotel_name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-07-11T12:26:26.228655" elapsed="0.001368"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-07-11T12:26:26.259225" level="INFO">${price_value} = 2,208</msg>
+<var>${price_value}</var>
+<arg>${price[${i}]}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-11T12:26:26.231499" elapsed="0.028215"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-07-11T12:26:26.264566" level="INFO">${price_new} = 2208</msg>
+<var>${price_new}</var>
+<arg>${price_value}</arg>
+<arg>,</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-07-11T12:26:26.260766" elapsed="0.004093"/>
+</kw>
+<kw name="Convert To Integer" owner="BuiltIn">
+<msg time="2025-07-11T12:26:26.266931" level="INFO">${hotel_price} = 2208</msg>
+<var>${hotel_price}</var>
+<arg>${price_new}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<status status="PASS" start="2025-07-11T12:26:26.265552" elapsed="0.001779"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${HOTEL_PRICES}</arg>
+<arg>${hotel_price}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-07-11T12:26:26.268046" elapsed="0.001288"/>
+</kw>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${HOTEL_KEY_VALUE}</arg>
+<arg>${hotel_name}=${hotel_price}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" start="2025-07-11T12:26:26.269822" elapsed="0.001004"/>
+</kw>
+<var name="${i}">6</var>
+<status status="PASS" start="2025-07-11T12:26:26.195996" elapsed="0.075102"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-07-11T12:26:26.289848" level="INFO">${hotel_name_text} = Hotel City Premier</msg>
+<var>${hotel_name_text}</var>
+<arg>${name[${i}]}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-11T12:26:26.272262" elapsed="0.017933"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-07-11T12:26:26.292988" level="INFO">${hotel_name_strip} = Hotel City Premier</msg>
+<var>${hotel_name_strip}</var>
+<arg>${hotel_name_text}</arg>
+<arg>,</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-07-11T12:26:26.290780" elapsed="0.002627"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2025-07-11T12:26:26.295186" level="INFO">${hotel_name} = Hotel City Premier</msg>
+<var>${hotel_name}</var>
+<arg>${hotel_name_strip}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2025-07-11T12:26:26.293915" elapsed="0.001578"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${HOTEL_NAMES}</arg>
+<arg>${hotel_name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-07-11T12:26:26.296167" elapsed="0.001821"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-07-11T12:26:26.324262" level="INFO">${price_value} = 12,500</msg>
+<var>${price_value}</var>
+<arg>${price[${i}]}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-11T12:26:26.299076" elapsed="0.025823"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-07-11T12:26:26.333902" level="INFO">${price_new} = 12500</msg>
+<var>${price_new}</var>
+<arg>${price_value}</arg>
+<arg>,</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-07-11T12:26:26.326686" elapsed="0.007980"/>
+</kw>
+<kw name="Convert To Integer" owner="BuiltIn">
+<msg time="2025-07-11T12:26:26.336882" level="INFO">${hotel_price} = 12500</msg>
+<var>${hotel_price}</var>
+<arg>${price_new}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<status status="PASS" start="2025-07-11T12:26:26.335661" elapsed="0.001663"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${HOTEL_PRICES}</arg>
+<arg>${hotel_price}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-07-11T12:26:26.338184" elapsed="0.001518"/>
+</kw>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${HOTEL_KEY_VALUE}</arg>
+<arg>${hotel_name}=${hotel_price}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" start="2025-07-11T12:26:26.340524" elapsed="0.002089"/>
+</kw>
+<var name="${i}">7</var>
+<status status="PASS" start="2025-07-11T12:26:26.271760" elapsed="0.072209"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-07-11T12:26:26.367788" level="INFO">${hotel_name_text} = The Westin Gurgaon, New Delhi</msg>
+<var>${hotel_name_text}</var>
+<arg>${name[${i}]}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-11T12:26:26.345926" elapsed="0.022685"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-07-11T12:26:26.375630" level="INFO">${hotel_name_strip} = The Westin Gurgaon New Delhi</msg>
+<var>${hotel_name_strip}</var>
+<arg>${hotel_name_text}</arg>
+<arg>,</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-07-11T12:26:26.370216" elapsed="0.005934"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2025-07-11T12:26:26.380441" level="INFO">${hotel_name} = The Westin Gurgaon New Delhi</msg>
+<var>${hotel_name}</var>
+<arg>${hotel_name_strip}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2025-07-11T12:26:26.377230" elapsed="0.003721"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${HOTEL_NAMES}</arg>
+<arg>${hotel_name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-07-11T12:26:26.381762" elapsed="0.001465"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-07-11T12:26:26.406222" level="INFO">${price_value} = 6,799</msg>
+<var>${price_value}</var>
+<arg>${price[${i}]}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-11T12:26:26.384067" elapsed="0.022498"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-07-11T12:26:26.411373" level="INFO">${price_new} = 6799</msg>
+<var>${price_new}</var>
+<arg>${price_value}</arg>
+<arg>,</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-07-11T12:26:26.407220" elapsed="0.004744"/>
+</kw>
+<kw name="Convert To Integer" owner="BuiltIn">
+<msg time="2025-07-11T12:26:26.413691" level="INFO">${hotel_price} = 6799</msg>
+<var>${hotel_price}</var>
+<arg>${price_new}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<status status="PASS" start="2025-07-11T12:26:26.412614" elapsed="0.001386"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${HOTEL_PRICES}</arg>
+<arg>${hotel_price}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-07-11T12:26:26.414507" elapsed="0.001239"/>
+</kw>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${HOTEL_KEY_VALUE}</arg>
+<arg>${hotel_name}=${hotel_price}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" start="2025-07-11T12:26:26.416513" elapsed="0.001565"/>
+</kw>
+<var name="${i}">8</var>
+<status status="PASS" start="2025-07-11T12:26:26.345204" elapsed="0.073195"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-07-11T12:26:26.440158" level="INFO">${hotel_name_text} = Pride Plaza Hotel, Aerocity New Delhi</msg>
+<var>${hotel_name_text}</var>
+<arg>${name[${i}]}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-11T12:26:26.420270" elapsed="0.020409"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-07-11T12:26:26.444721" level="INFO">${hotel_name_strip} = Pride Plaza Hotel Aerocity New Delhi</msg>
+<var>${hotel_name_strip}</var>
+<arg>${hotel_name_text}</arg>
+<arg>,</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-07-11T12:26:26.441338" elapsed="0.003685"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2025-07-11T12:26:26.447418" level="INFO">${hotel_name} = Pride Plaza Hotel Aerocity New Delhi</msg>
+<var>${hotel_name}</var>
+<arg>${hotel_name_strip}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2025-07-11T12:26:26.445843" elapsed="0.002223"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${HOTEL_NAMES}</arg>
+<arg>${hotel_name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-07-11T12:26:26.449299" elapsed="0.002515"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-07-11T12:26:26.576309" level="INFO">${price_value} = 8,455</msg>
+<var>${price_value}</var>
+<arg>${price[${i}]}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-11T12:26:26.453260" elapsed="0.123410"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-07-11T12:26:26.580431" level="INFO">${price_new} = 8455</msg>
+<var>${price_new}</var>
+<arg>${price_value}</arg>
+<arg>,</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-07-11T12:26:26.577349" elapsed="0.003634"/>
+</kw>
+<kw name="Convert To Integer" owner="BuiltIn">
+<msg time="2025-07-11T12:26:26.583597" level="INFO">${hotel_price} = 8455</msg>
+<var>${hotel_price}</var>
+<arg>${price_new}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<status status="PASS" start="2025-07-11T12:26:26.581992" elapsed="0.002050"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${HOTEL_PRICES}</arg>
+<arg>${hotel_price}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-07-11T12:26:26.584740" elapsed="0.000886"/>
+</kw>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${HOTEL_KEY_VALUE}</arg>
+<arg>${hotel_name}=${hotel_price}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" start="2025-07-11T12:26:26.586512" elapsed="0.001830"/>
+</kw>
+<var name="${i}">9</var>
+<status status="PASS" start="2025-07-11T12:26:26.419229" elapsed="0.169685"/>
+</iter>
+<var>${i}</var>
+<value>0</value>
+<value>10</value>
+<status status="PASS" start="2025-07-11T12:26:25.741709" elapsed="0.847823"/>
+</for>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${HOTEL_KEY_VALUE}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-07-11T12:26:26.590431" elapsed="0.006074"/>
+</kw>
+<kw name="Sort List" owner="Collections">
+<arg>${HOTEL_PRICES}</arg>
+<doc>Sorts the given list in place.</doc>
+<status status="PASS" start="2025-07-11T12:26:26.597905" elapsed="0.001941"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${HOTEL_PRICES}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-07-11T12:26:26.600963" elapsed="0.002403"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2025-07-11T12:26:26.605540" level="INFO">${cheapest} = 778</msg>
+<var>${cheapest}</var>
+<arg>${HOTEL_PRICES}</arg>
+<arg>0</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2025-07-11T12:26:26.604239" elapsed="0.001792"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Get From List" owner="Collections">
+<msg time="2025-07-11T12:26:26.610781" level="INFO">${hotel_name} = Hotel Roma Deluxe</msg>
+<var>${hotel_name}</var>
+<arg>${HOTEL_NAMES}</arg>
+<arg>${index}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2025-07-11T12:26:26.609009" elapsed="0.002247"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-07-11T12:26:26.614621" level="INFO">${hotel_price} = 778</msg>
+<var>${hotel_price}</var>
+<arg>${HOTEL_KEY_VALUE}</arg>
+<arg>${hotel_name}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-07-11T12:26:26.612985" elapsed="0.001907"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath=(//h3[contains(@data-selenium,'hotel-name')])[${index + 1}]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-07-11T12:26:26.619366" elapsed="0.579729"/>
+</kw>
+<arg>'${hotel_price}' == '${cheapest}'</arg>
+<arg>Scroll Element Into View</arg>
+<arg>xpath=(//h3[contains(@data-selenium,'hotel-name')])[${index + 1}]</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-07-11T12:26:26.615821" elapsed="0.583689"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-07-11T12:26:29.202948" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-07-11T12:26:27.201401" elapsed="2.002443"/>
+</kw>
+<arg>'${hotel_price}' == '${cheapest}'</arg>
+<arg>Sleep</arg>
+<arg>2</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-07-11T12:26:27.200020" elapsed="2.004982"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-11T12:26:29.216886" level="INFO">Clicking element 'xpath=(//h3[contains(@data-selenium,'hotel-name')])[1]'.</msg>
+<arg>xpath=(//h3[contains(@data-selenium,'hotel-name')])[${index + 1}]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-11T12:26:29.210201" elapsed="0.600815"/>
+</kw>
+<arg>'${hotel_price}' == '${cheapest}'</arg>
+<arg>Click Element</arg>
+<arg>xpath=(//h3[contains(@data-selenium,'hotel-name')])[${index + 1}]</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-07-11T12:26:29.206663" elapsed="0.605088"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Opening cheapest Hotel: ${hotel_name} - ₹${hotel_price}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-07-11T12:26:29.815036" elapsed="0.002163"/>
+</kw>
+<arg>'${hotel_price}' == '${cheapest}'</arg>
+<arg>Log To Console</arg>
+<arg>Opening cheapest Hotel: ${hotel_name} - ₹${hotel_price}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-07-11T12:26:29.812722" elapsed="0.005171"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Exit For Loop" owner="BuiltIn">
+<msg time="2025-07-11T12:26:29.821166" level="INFO">Exiting for loop altogether.</msg>
+<doc>Stops executing the enclosing FOR loop.</doc>
+<status status="PASS" start="2025-07-11T12:26:29.820357" elapsed="0.001661"/>
+</kw>
+<arg>'${hotel_price}' == '${cheapest}'</arg>
+<arg>Exit For Loop</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-07-11T12:26:29.818627" elapsed="0.004597"/>
+</kw>
+<var name="${index}">0</var>
+<status status="PASS" start="2025-07-11T12:26:26.608088" elapsed="3.215493"/>
+</iter>
+<var>${index}</var>
+<value>0</value>
+<value>10</value>
+<status status="PASS" start="2025-07-11T12:26:26.606725" elapsed="3.217151"/>
+</for>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-07-11T12:26:34.825918" level="INFO">Slept 5 seconds.</msg>
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-07-11T12:26:29.824511" elapsed="5.002483"/>
+</kw>
+<kw name="Switch Window" owner="SeleniumLibrary">
+<arg>NEW</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" start="2025-07-11T12:26:34.828554" elapsed="0.045444"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-11T12:26:34.878595" level="INFO">Clicking element 'xpath=//div[@class='GridItem__GridItemStyled-sc-3btv1u-0 fLRAkl']/div/button'.</msg>
+<arg>xpath=//div[@class='GridItem__GridItemStyled-sc-3btv1u-0 fLRAkl']/div/button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-11T12:26:34.875494" elapsed="0.473126"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=(//div[@class='GridItem__GridItemStyled-sc-3btv1u-0 bXKJWd']/button)[19]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-11T12:26:35.349538" elapsed="0.050839"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-11T12:26:35.403006" level="INFO">Clicking element 'xpath=(//div[@class='GridItem__GridItemStyled-sc-3btv1u-0 bXKJWd']/button)[19]'.</msg>
+<arg>xpath=(//div[@class='GridItem__GridItemStyled-sc-3btv1u-0 bXKJWd']/button)[19]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-11T12:26:35.401491" elapsed="0.410156"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-07-11T12:26:40.814778" level="INFO">Slept 5 seconds.</msg>
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-07-11T12:26:35.812713" elapsed="5.003592"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-11T12:26:40.820137" level="INFO">Clicking element 'xpath=//div[@data-element-name='hotel-gallery-close-button']'.</msg>
+<arg>xpath=//div[@data-element-name='hotel-gallery-close-button']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-11T12:26:40.817779" elapsed="0.492362"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-07-11T12:26:46.312744" level="INFO">Slept 5 seconds.</msg>
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-07-11T12:26:41.311067" elapsed="5.002431"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=(//button[@data-element-name='jump-nav-cheapest-room-btn'])[2]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-11T12:26:46.314413" elapsed="0.035622"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-11T12:26:46.351575" level="INFO">Clicking element 'xpath=(//button[@data-element-name='jump-nav-cheapest-room-btn'])[2]'.</msg>
+<arg>xpath=(//button[@data-element-name='jump-nav-cheapest-room-btn'])[2]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-11T12:26:46.350685" elapsed="0.282963"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-07-11T12:26:51.636323" level="INFO">Slept 5 seconds.</msg>
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-07-11T12:26:46.634651" elapsed="5.002650"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-11T12:26:51.639881" level="INFO">Clicking element 'xpath=(//div[@class='Box-sc-kv6pi1-0 iyqcnt ChildRoomsList-reserveNow'])[1]'.</msg>
+<arg>xpath=(//div[@class='Box-sc-kv6pi1-0 iyqcnt ChildRoomsList-reserveNow'])[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-11T12:26:51.638431" elapsed="2.337778"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-07-11T12:27:03.981237" level="INFO">Slept 10 seconds.</msg>
+<arg>10</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-07-11T12:26:53.978121" elapsed="10.004424"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//button[@actiontype='button']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-11T12:27:03.984038" elapsed="0.053003"/>
+</kw>
+<kw name="Handle Alert" owner="SeleniumLibrary">
+<msg time="2025-07-11T12:27:04.038570" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
+<msg time="2025-07-11T12:27:09.310959" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-35.png"&gt;&lt;img src="selenium-screenshot-35.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-07-11T12:27:09.312605" level="FAIL">Alert not found in 5 seconds.</msg>
+<arg>accept</arg>
+<doc>Handles the current alert and returns its message.</doc>
+<status status="FAIL" start="2025-07-11T12:27:04.037694" elapsed="5.323263">Alert not found in 5 seconds.</status>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>xpath=//input[@id='contact.contactFirstName']</arg>
+<arg>ATS</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-07-11T12:27:09.362723" elapsed="0.001015"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>xpath=//input[@id='contact.contactLastName']</arg>
+<arg>STA</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-07-11T12:27:09.365068" elapsed="0.001033"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>xpath=//input[@id='contact.contactEmail']</arg>
+<arg>ats12@gmail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-07-11T12:27:09.367335" elapsed="0.000868"/>
+</kw>
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<arg>xpath=//select[@searchplaceholdertext='Search']</arg>
+<arg>India</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="NOT RUN" start="2025-07-11T12:27:09.369410" elapsed="0.000993"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>xpath=(//span[@class='sc-eDDNvR Typographystyled__TypographyStyled-sc-1uoovui-0 dVAttZ lfSBCC FormFieldstyled__InputTypographyStyled-sc-11x6xcu-1 kUuTYs'])[5]</arg>
+<arg>8765435678</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-07-11T12:27:09.371609" elapsed="0.000827"/>
+</kw>
+<kw name="Select Radio Button" owner="SeleniumLibrary">
+<arg>xpath=(//label[@data-element-name='Smoking']/div)[1]</arg>
+<arg>Smoking</arg>
+<doc>Sets the radio button group ``group_name`` to ``value``.</doc>
+<status status="NOT RUN" start="2025-07-11T12:27:09.373553" elapsed="0.001197"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>xpath=//button[@data-testid='shimmer-cta']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-07-11T12:27:09.376009" elapsed="0.001236"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>10</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-07-11T12:27:09.378481" elapsed="0.000731"/>
+</kw>
+<status status="FAIL" start="2025-07-11T12:25:24.527777" elapsed="104.853039">Alert not found in 5 seconds.</status>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-07-11T12:27:09.383432" elapsed="2.574339"/>
+</kw>
+<status status="FAIL" start="2025-07-11T12:25:24.523928" elapsed="107.435121">Alert not found in 5 seconds.</status>
+</test>
+<status status="FAIL" start="2025-07-11T12:25:22.704679" elapsed="109.260903"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Agoda Full Flow" id="s1" pass="0" fail="1" skip="0">Agoda Full Flow</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-07-11T12:25:24.922689" level="WARN">The chromedriver version (137.0.7151.68) detected in PATH at C:\Program Files\Python313\Scripts\chromedriver.exe might not be compatible with the detected chrome version (138.0.7204.100); currently, chromedriver 138.0.7204.94 is recommended for chrome 138.*, so it is advised to delete the driver in PATH and retry</msg>
+</errors>
+</robot>

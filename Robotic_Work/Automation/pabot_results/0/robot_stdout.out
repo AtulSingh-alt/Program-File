@@ -1,0 +1,27 @@
+==============================================================================
+Suites                                                                        
+==============================================================================
+Suites.LoginTest                                                              
+==============================================================================
+LoginTest                                                               
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Users\atul.singh\PycharmProjects\My_robotic_work\Automation\TestCases\LoginTest.robot:12
+    T:  LoginTest    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Users\atul.singh\PycharmProjects\My_robotic_work\Automation\TestCases\LoginTest.robot:18
+      Verify Successfull Login    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Users\atul.singh\PycharmProjects\My_robotic_work\Automation\Resources\LoginKeywords.robot:24
+      Element Should Be Visible    //div[@class="content-header"]
+______________________________________________________________________________
+| FAIL |
+Element with locator '//div[@class="content-header"]' not found.
+------------------------------------------------------------------------------
+Suites.LoginTest                                                      | FAIL |
+1 test, 0 passed, 1 failed
+==============================================================================
+Suites                                                                | FAIL |
+1 test, 0 passed, 1 failed
+==============================================================================
+Output:  C:\Users\atul.singh\PycharmProjects\My_robotic_work\Automation\pabot_results\0\output.xml

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Rebot 7.3 (Python 3.13.3 on win32)" generated="2025-07-02T11:00:17.274130" rpa="false" schemaversion="5">
+<suite id="s1" name="Suites">
+<suite id="s1-s1" name="LoginTest" source="C:\Users\atul.singh\PycharmProjects\My_robotic_work\Automation\TestCases\LoginTest.robot">
+<test id="s1-s1-t1" name="LoginTest" line="12">
+<kw name="Open My Browser" owner="LoginKeywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-07-02T10:59:49.098655" level="INFO">Opening browser 'chrome' to base url 'https://admin-demo.nopcommerce.com/'.</msg>
+<arg>${SiteUrl}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-07-02T10:59:49.098338" elapsed="4.702052"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-07-02T10:59:53.800735" elapsed="0.039207"/>
+</kw>
+<arg>${SiteUrl}</arg>
+<arg>${browser}</arg>
+<status status="PASS" start="2025-07-02T10:59:49.097459" elapsed="4.742698"/>
+</kw>
+<kw name="Enter UserName" owner="LoginKeywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-02T10:59:53.842014" level="INFO">Typing text 'admin@yourstore.com' into text field 'name:Email'.</msg>
+<arg>${txt_loginUserName}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-02T10:59:53.841324" elapsed="0.371009"/>
+</kw>
+<arg>${user}</arg>
+<status status="PASS" start="2025-07-02T10:59:53.840556" elapsed="0.371910"/>
+</kw>
+<kw name="Enter Password" owner="LoginKeywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-02T10:59:54.213441" level="INFO">Typing text 'admin' into text field 'name:Password'.</msg>
+<arg>${txt_loginpassword}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-02T10:59:54.213132" elapsed="0.135598"/>
+</kw>
+<arg>${pwd}</arg>
+<status status="PASS" start="2025-07-02T10:59:54.212665" elapsed="0.136246"/>
+</kw>
+<kw name="Click SignIn" owner="LoginKeywords">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-07-02T10:59:54.349795" level="INFO">Clicking button 'xpath://*[@id='main']/div/div/div/div[2]/div[1]/div/form/div[3]/button'.</msg>
+<arg>${btn_signin}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-02T10:59:54.349536" elapsed="0.183198"/>
+</kw>
+<status status="PASS" start="2025-07-02T10:59:54.349131" elapsed="0.183782"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-07-02T11:00:14.534428" level="INFO">Slept 20 seconds.</msg>
+<arg>20s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-07-02T10:59:54.533065" elapsed="20.001627"/>
+</kw>
+<kw name="Verify Successfull Login" owner="LoginKeywords">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-07-02T11:00:14.684051" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="0-selenium-screenshot-1.png"&gt;&lt;img src="0-selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-07-02T11:00:14.684256" level="FAIL">Element with locator '//div[@class="content-header"]' not found.</msg>
+<arg>//div[@class="content-header"]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="FAIL" start="2025-07-02T11:00:14.536101" elapsed="0.155910">Element with locator '//div[@class="content-header"]' not found.</status>
+</kw>
+<status status="FAIL" start="2025-07-02T11:00:14.535176" elapsed="0.157047">Element with locator '//div[@class="content-header"]' not found.</status>
+</kw>
+<kw name="close my browser" owner="LoginKeywords">
+<status status="NOT RUN" start="2025-07-02T11:00:14.692382" elapsed="0.000110"/>
+</kw>
+<status status="FAIL" start="2025-07-02T10:59:49.096864" elapsed="25.595818">Element with locator '//div[@class="content-header"]' not found.</status>
+</test>
+<status status="FAIL" start="2025-07-02T10:59:48.578000" elapsed="25.596000"/>
+</suite>
+<suite id="s1-s2" name="RegistrationTest" source="C:\Users\atul.singh\PycharmProjects\My_robotic_work\Automation\TestCases\RegistrationTest.robot">
+<test id="s1-s2-t1" name="RegistrationTest" line="10">
+<kw name="Open My Browser" owner="RegistrationKeywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-07-02T10:59:49.099437" level="INFO">Opening browser 'chrome' to base url 'https://www.facebook.com/'.</msg>
+<arg>${SiteUrl}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-07-02T10:59:49.099080" elapsed="2.365265"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-07-02T10:59:51.464707" elapsed="0.024797"/>
+</kw>
+<arg>${SiteUrl}</arg>
+<arg>${Browser}</arg>
+<status status="PASS" start="2025-07-02T10:59:49.098305" elapsed="2.391412"/>
+</kw>
+<kw name="Click Register link" owner="RegistrationKeywords">
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2025-07-02T10:59:51.491130" level="INFO">Clicking link 'xpath://*[@id='u_0_0_9N']'.</msg>
+<msg time="2025-07-02T10:59:51.614740" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="1-selenium-screenshot-1.png"&gt;&lt;img src="1-selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-07-02T10:59:51.614993" level="FAIL">Link with locator 'xpath://*[@id='u_0_0_9N']' not found.</msg>
+<arg>${link_Reg}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="FAIL" start="2025-07-02T10:59:51.490565" elapsed="0.134502">Link with locator 'xpath://*[@id='u_0_0_9N']' not found.</status>
+</kw>
+<status status="FAIL" start="2025-07-02T10:59:51.490007" elapsed="0.135457">Link with locator 'xpath://*[@id='u_0_0_9N']' not found.</status>
+</kw>
+<kw name="Enter FirstName" owner="RegistrationKeywords">
+<arg>Ashu</arg>
+<status status="NOT RUN" start="2025-07-02T10:59:51.625683" elapsed="0.000121"/>
+</kw>
+<kw name="Enter LastName" owner="RegistrationKeywords">
+<arg>Singh</arg>
+<status status="NOT RUN" start="2025-07-02T10:59:51.625936" elapsed="0.000080"/>
+</kw>
+<kw name="Enter DOB Day" owner="RegistrationKeywords">
+<arg>16</arg>
+<status status="NOT RUN" start="2025-07-02T10:59:51.626158" elapsed="0.000070"/>
+</kw>
+<kw name="Enter DOB Month" owner="RegistrationKeywords">
+<arg>05</arg>
+<status status="NOT RUN" start="2025-07-02T10:59:51.626319" elapsed="0.000063"/>
+</kw>
+<kw name="Enter DOB Year" owner="RegistrationKeywords">
+<arg>1981</arg>
+<status status="NOT RUN" start="2025-07-02T10:59:51.626471" elapsed="0.000071"/>
+</kw>
+<kw name="Select Gender" owner="RegistrationKeywords">
+<arg>Male</arg>
+<status status="NOT RUN" start="2025-07-02T10:59:51.626685" elapsed="0.000073"/>
+</kw>
+<kw name="Enter Phone" owner="RegistrationKeywords">
+<arg>9887897656</arg>
+<status status="NOT RUN" start="2025-07-02T10:59:51.627386" elapsed="0.000141"/>
+</kw>
+<kw name="Enter Password" owner="RegistrationKeywords">
+<arg>rdfghjk54@</arg>
+<status status="NOT RUN" start="2025-07-02T10:59:51.627698" elapsed="0.000091"/>
+</kw>
+<kw name="Click Submit" owner="RegistrationKeywords">
+<status status="NOT RUN" start="2025-07-02T10:59:51.627915" elapsed="0.000096"/>
+</kw>
+<kw name="Verify Succesful Registration" owner="RegistrationKeywords">
+<status status="NOT RUN" start="2025-07-02T10:59:51.628534" elapsed="0.000199"/>
+</kw>
+<kw name="Close my browser" owner="RegistrationKeywords">
+<status status="NOT RUN" start="2025-07-02T10:59:51.628959" elapsed="0.000140"/>
+</kw>
+<status status="FAIL" start="2025-07-02T10:59:49.097661" elapsed="2.531756">Link with locator 'xpath://*[@id='u_0_0_9N']' not found.</status>
+</test>
+<status status="FAIL" start="2025-07-02T10:59:48.578069" elapsed="3.052348"/>
+</suite>
+<doc>[https://pabot.org/?ref=log|Pabot] result from 2 executions.</doc>
+<status status="FAIL" start="2025-07-02T10:59:48.560000" elapsed="25.597000"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="2" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Suites" id="s1" pass="0" fail="2" skip="0">Suites</stat>
+<stat name="LoginTest" id="s1-s1" pass="0" fail="1" skip="0">Suites.LoginTest</stat>
+<stat name="RegistrationTest" id="s1-s2" pass="0" fail="1" skip="0">Suites.RegistrationTest</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

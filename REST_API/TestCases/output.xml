@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.1 (Python 3.13.3 on win32)" generated="2025-07-09T14:39:54.710559" rpa="false" schemaversion="5">
+<suite id="s1" name="14.GoogleMapAPI" source="C:\Users\atul.singh\PycharmProjects\REST_API\TestCases\14.GoogleMapAPI.robot">
+<test id="s1-t1" name="GoogleMapPlacesAPITC" line="10">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-07-09T14:39:55.321809" level="INFO">${params} = {'location': '-33.8670522,151.1957362', 'radius': '500', 'types': 'food', 'name': 'harbour', 'key': 'YOUR_API_KEY'}</msg>
+<var>${params}</var>
+<arg>location=-33.8670522,151.1957362</arg>
+<arg>radius=500</arg>
+<arg>types=food</arg>
+<arg>name=harbour</arg>
+<arg>key=YOUR_API_KEY</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-07-09T14:39:55.321540" elapsed="0.000301"/>
+</kw>
+<kw name="GET" owner="RequestsLibrary">
+<msg time="2025-07-09T14:39:55.567308" level="INFO">GET Request : url=https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522%2C151.1957362&amp;radius=500&amp;types=food&amp;name=harbour&amp;key=YOUR_API_KEY 
+ path_url=/maps/api/place/nearbysearch/json?location=-33.8670522%2C151.1957362&amp;radius=500&amp;types=food&amp;name=harbour&amp;key=YOUR_API_KEY 
+ headers={'User-Agent': 'python-requests/2.32.4', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2025-07-09T14:39:55.567600" level="INFO">GET Response : url=https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522%2C151.1957362&amp;radius=500&amp;types=food&amp;name=harbour&amp;key=YOUR_API_KEY 
+ status=200, reason=OK 
+ headers={'Content-Type': 'application/json; charset=UTF-8', 'Date': 'Wed, 09 Jul 2025 09:09:56 GMT', 'Pragma': 'no-cache', 'Expires': 'Fri, 01 Jan 1990 00:00:00 GMT', 'Cache-Control': 'no-cache, must-revalidate', 'Vary': 'Accept-Language', 'Content-Security-Policy-Report-Only': "script-src 'none'; form-action 'none'; frame-src 'none'; report-uri https://csp.withgoogle.com/csp/scaffolding/msaipomnpc:830:0", 'Cross-Origin-Opener-Policy-Report-Only': 'same-origin; report-to=msaipomnpc:830:0', 'Report-To': '{"group":"msaipomnpc:830:0","max_age":2592000,"endpoints":[{"url":"https://csp.withgoogle.com/csp/report-to/scaffolding/msaipomnpc:830:0"}],}', 'Server': 'scaffolding on HTTPServer2', 'Content-Length': '139', 'X-XSS-Protection': '0', 'X-Frame-Options': 'SAMEORIGIN', 'Server-Timing': 'gfet4t7; dur=63', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'} 
+ body={
+   "error_message" : "The provided API key is invalid.",
+   "html_attributions" : [],
+   "results" : [],
+   "status" : "REQUEST_DENIED"
+} 
+ </msg>
+<msg time="2025-07-09T14:39:55.567912" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>${base_url}${req_uri}</arg>
+<arg>params=${params}</arg>
+<doc>Sends a GET request.</doc>
+<status status="PASS" start="2025-07-09T14:39:55.322184" elapsed="0.245795"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${response.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-07-09T14:39:55.568777" elapsed="0.001518"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${response.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-07-09T14:39:55.570941" elapsed="0.001173"/>
+</kw>
+<status status="PASS" start="2025-07-09T14:39:55.320594" elapsed="0.252001"/>
+</test>
+<status status="PASS" start="2025-07-09T14:39:54.713852" elapsed="0.860346"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="14.GoogleMapAPI" id="s1" pass="1" fail="0" skip="0">14.GoogleMapAPI</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -1,0 +1,28 @@
+==============================================================================
+Suites                                                                        
+==============================================================================
+Suites.RegistrationTest                                                       
+==============================================================================
+RegistrationTest                                                        
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Users\atul.singh\PycharmProjects\My_robotic_work\Automation\TestCases\RegistrationTest.robot:10
+    T:  RegistrationTest    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Users\atul.singh\PycharmProjects\My_robotic_work\Automation\TestCases\RegistrationTest.robot:12
+      Click Register link    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Users\atul.singh\PycharmProjects\My_robotic_work\Automation\Resources\RegistrationKeywords.robot:12
+      Click Link    ${link_Reg}
+      |  ${link_Reg} = xpath://*[@id='u_0_0_9N'] (str)
+______________________________________________________________________________
+| FAIL |
+Link with locator 'xpath://*[@id='u_0_0_9N']' not found.
+------------------------------------------------------------------------------
+Suites.RegistrationTest                                               | FAIL |
+1 test, 0 passed, 1 failed
+==============================================================================
+Suites                                                                | FAIL |
+1 test, 0 passed, 1 failed
+==============================================================================
+Output:  C:\Users\atul.singh\PycharmProjects\My_robotic_work\Automation\pabot_results\1\output.xml

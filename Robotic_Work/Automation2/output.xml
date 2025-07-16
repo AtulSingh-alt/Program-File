@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3 (Python 3.13.3 on win32)" generated="2025-07-04T12:21:39.979903" rpa="false" schemaversion="5">
+<suite id="s1" name="3.DefineKeywords" source="C:\Users\atul.singh\PycharmProjects\My_robotic_work\Automation2\3.DefineKeywords.robot">
+<test id="s1-t1" name="ElearningWebsite" line="13">
+<kw name="Itlearn360 Login Code">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-07-04T12:21:40.498622" level="INFO">Opening browser 'Chrome' to base url 'https://demo.itlearn360.com/'.</msg>
+<arg>${Url}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-07-04T12:21:40.498423" elapsed="7.073577"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-07-04T12:21:47.572558" elapsed="0.046270"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>${Time}</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2025-07-04T12:21:47.619174" elapsed="0.001786"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-04T12:21:47.621521" level="INFO">Clicking element 'id:loginlabel'.</msg>
+<arg>id:loginlabel</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T12:21:47.621166" elapsed="0.095203"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T12:21:47.716925" level="INFO">Typing text 'Demo12' into text field 'id:user_login'.</msg>
+<arg>id:user_login</arg>
+<arg>${User}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T12:21:47.716625" elapsed="0.308848"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T12:21:48.026034" level="INFO">Typing text 'Test123456$' into text field 'id:user_pass'.</msg>
+<arg>id:user_pass</arg>
+<arg>${Password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T12:21:48.025720" elapsed="0.152163"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-04T12:21:48.178384" level="INFO">Clicking element 'id:wp-submit'.</msg>
+<arg>id:wp-submit</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T12:21:48.178117" elapsed="1.593808"/>
+</kw>
+<status status="PASS" start="2025-07-04T12:21:40.497914" elapsed="9.274125"/>
+</kw>
+<status status="PASS" start="2025-07-04T12:21:40.497245" elapsed="9.275180"/>
+</test>
+<status status="PASS" start="2025-07-04T12:21:39.982378" elapsed="9.790591"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="3.DefineKeywords" id="s1" pass="1" fail="0" skip="0">3.DefineKeywords</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
