@@ -1,97 +1,126 @@
 *** Settings ***
-Library           SeleniumLibrary
-Library           String
-Library           Collections
+Library     SeleniumLibrary
+Library    String
+Library    Collections
+Test Teardown   Close Browser
 
-Test Setup        Open Browser To Agoda
-Test Teardown     Close Browser
 
 *** Variables ***
-${BASE_URL}       https://www.agoda.com/en-in/
-${BROWSER}        Chrome
+${BASE_URL}     https://www.agoda.com/en-in/
+${BROWSER}      Chrome
 @{HOTEL_NAMES}
 @{HOTEL_PRICES}
 &{HOTEL_KEY_VALUE}
 
+
 *** Test Cases ***
-Verify Agoda Booking Flow
-    Search Hotels In Delhi
-    Collect Hotel Details
-    Sort Hotels By Price
-    Open Cheapest Hotel
-    Select Room And Proceed To Booking
-    Fill Guest Details And Continue
-
-*** Keywords ***
-
-Open Browser To Agoda
-    Open Browser        ${BASE_URL}     ${BROWSER}
+Full Flow
+    #Check All Section
+    Open Browser    ${BASE_URL}     ${BROWSER}
     Maximize Browser Window
+    Wait Until Element Is Visible    xpath=//button[contains(@data-element-name,'prominent-app-download-floating-button')]      timeout=10s
+    Click Element    xpath=//button[contains(@data-element-name,'prominent-app-download-floating-button')]
+    Sleep    2
 
-Search Hotels In Delhi
-    Input Text    xpath=//input[contains(@data-selenium,'textInput')]    Delhi
-    Wait Until Element Is Visible    xpath=(//li[contains(@data-selenium,'autosuggest-item')])[1]
-    Click Element    xpath=(//li[contains(@data-selenium,'autosuggest-item')])[1]
-    Wait Until Element Is Visible    xpath=(//i[contains(@data-selenium,'ficon-icon-box')])[2]
-    Click Element    xpath=(//i[contains(@data-selenium,'ficon-icon-box')])[2]
-    Wait Until Element Is Visible    xpath=//button[contains(@data-selenium,'searchButton')]
-    Click Element    xpath=//button[contains(@data-selenium,'searchButton')]
+    ${criteria} =   Get Element Count    xpath=//h6[@class='Typographystyled__TypographyStyled-sc-j18mtu-0 lcQfEu kite-js-Typography ']
+    Log To Console    ${criteria}
 
-Collect Hotel Details
-    FOR    ${i}    IN RANGE    0    10
-        Execute Javascript    window.scrollBy(0,1000)
+    FOR    ${i}    IN RANGE    1    6
+        Wait Until Element Is Visible    xpath=(//h6[@class='Typographystyled__TypographyStyled-sc-j18mtu-0 lcQfEu kite-js-Typography '])[${i}]
+        Click Element    xpath=(//h6[@class='Typographystyled__TypographyStyled-sc-j18mtu-0 lcQfEu kite-js-Typography '])[${i}]
         Sleep    2
     END
-    ${name_elements}=      Get WebElements    xpath=//h3[contains(@data-selenium,'hotel-name')]
-    ${price_elements}=     Get WebElements    xpath=//span[contains(@data-selenium,'display-price')]
+    #Happy Flow
 
-    FOR    ${i}    IN RANGE    0    10
-        ${hotel_name}=    Get Text    ${name_elements[${i}]}
-        ${clean_name}=    Replace String    ${hotel_name}    ,    ${EMPTY}
-        Append To List    ${HOTEL_NAMES}    ${clean_name}
+    Wait Until Element Is Visible    xpath=(//h6[@class='Typographystyled__TypographyStyled-sc-j18mtu-0 lcQfEu kite-js-Typography '])[1]
+    Click Element    xpath=(//h6[@class='Typographystyled__TypographyStyled-sc-j18mtu-0 lcQfEu kite-js-Typography '])[1]
+    Input Text    xpath=//input[contains(@data-selenium,'textInput')]    Delhi
+    Sleep    2
+    Wait Until Element Is Visible    xpath=(//li[contains(@data-selenium,'autosuggest-item')])[1]
+    Click Element    xpath=(//li[contains(@data-selenium,'autosuggest-item')])[1]
 
-        ${hotel_price_text}=    Get Text    ${price_elements[${i}]}
-        ${clean_price}=    Replace String    ${hotel_price_text}    ,    ${EMPTY}
-        ${hotel_price}=    Convert To Integer    ${clean_price}
-        Append To List    ${HOTEL_PRICES}    ${hotel_price}
+    Wait Until Element Is Visible    xpath=(//i[contains(@data-selenium,'ficon-icon-box')])[2]
+    Click Element    xpath=(//i[contains(@data-selenium,'ficon-icon-box')])[2]
+    Sleep    2
+    Wait Until Element Is Visible    xpath=//button[contains(@data-selenium,'searchButton')]/div/div/span
+    Click Element    xpath=//button[contains(@data-selenium,'searchButton')]/div    #/div/span
 
-        Set To Dictionary    ${HOTEL_KEY_VALUE}    ${clean_name}=${hotel_price}
+    Wait Until Element Is Visible    xpath=//a[contains(@data-selenium,'hotel-name')]       timeout=30s
+    ${hotel_count}=     Get Element Count    xpath=//a[contains(@data-selenium,'hotel-name')]
+    Log To Console    ${hotel_count}
+
+    FOR    ${i}    IN RANGE    1    10
+        Execute Javascript  window.scrollBy(0,1000)
+        Sleep    2
+        ${hotel_count}=     Get Element Count    xpath=//a[contains(@data-selenium,'hotel-name')]
     END
+    Log To Console    Total Hotels counts:${hotel_count}
+    Sleep    3
 
-Sort Hotels By Price
+    #Get hotel name
+    ${name}=      Get WebElements    xpath=//a[contains(@data-selenium,'hotel-name')]
+    ${price}=     Get WebElements    xpath=//span[contains(@data-selenium,'display-price')]
+
+
+    FOR    ${i}    IN RANGE    1    10
+        ${hotel_name_text}=  Get Text    ${name[${i}]}
+        ${hotel_name_strip}=  Replace String    ${hotel_name_text}    ,    ${EMPTY}
+        ${hotel_name}=  Convert To String    ${hotel_name_strip}
+        Append To List    ${HOTEL_NAMES}    ${hotel_name}
+
+        ${price_value}=     Get Text    ${price[${i}]}
+        ${price_new}=   Replace String    ${price_value}    ,    ${EMPTY}
+        ${hotel_price}=     Convert To Integer    ${price_new}
+        Append To List    ${HOTEL_PRICES}   ${hotel_price}
+        Set To Dictionary    ${HOTEL_KEY_VALUE}         ${hotel_name}=${hotel_price}
+    END
+    Log To Console    ${HOTEL_KEY_VALUE}
+
+    #Sort the price
     Sort List    ${HOTEL_PRICES}
-    ${cheapest}=    Get From List    ${HOTEL_PRICES}    0
-    Set Suite Variable    ${CHEAPEST_PRICE}    ${cheapest}
+    Log To Console    ${HOTEL_PRICES}
 
-Open Cheapest Hotel
-    FOR    ${index}    IN RANGE    0    10
+    #Get Cheapest price
+    ${cheapest}=    Get From List    ${HOTEL_PRICES}    0
+
+    FOR    ${index}    IN RANGE    1    10
         ${hotel_name}=    Get From List    ${HOTEL_NAMES}    ${index}
         ${hotel_price}=   Get From Dictionary    ${HOTEL_KEY_VALUE}    ${hotel_name}
-        Run Keyword If    '${hotel_price}' == '${CHEAPEST_PRICE}'    Scroll Element Into View    xpath=(//h3[contains(@data-selenium,'hotel-name')])[${index + 1}]
-        Run Keyword If    '${hotel_price}' == '${CHEAPEST_PRICE}'    Click Element    xpath=(//h3[contains(@data-selenium,'hotel-name')])[${index + 1}]
-        Run Keyword If    '${hotel_price}' == '${CHEAPEST_PRICE}'    Exit For Loop
+        Run Keyword If    '${hotel_price}' == '${cheapest}'    Scroll Element Into View    xpath=(//a[contains(@data-selenium,'hotel-name')])[${index + 1}]
+        Run Keyword If    '${hotel_price}' == '${cheapest}'    Sleep    2
+        Run Keyword If    '${hotel_price}' == '${cheapest}'    Click Element    xpath=(//a[contains(@data-selenium,'hotel-name')])[${index + 1}]
+        Run Keyword If    '${hotel_price}' == '${cheapest}'    Log To Console    Opening cheapest Hotel: ${hotel_name} - ₹${hotel_price}
+        Run Keyword If    '${hotel_price}' == '${cheapest}'    Exit For Loop
     END
-    Switch Window    NEW
     Sleep    3
+    Switch Window   NEW
 
-Select Room And Proceed To Booking
     Click Element    xpath=//div[@class='GridItem__GridItemStyled-sc-3btv1u-0 fLRAkl']/div/button
+
     Wait Until Element Is Visible    xpath=(//div[@class='GridItem__GridItemStyled-sc-3btv1u-0 bXKJWd']/button)[19]
     Click Element    xpath=(//div[@class='GridItem__GridItemStyled-sc-3btv1u-0 bXKJWd']/button)[19]
-    Sleep    2
+    Sleep    3
     Click Element    xpath=//div[@data-element-name='hotel-gallery-close-button']
-    Wait Until Element Is Visible    xpath=(//button[@data-element-name='jump-nav-cheapest-room-btn'])[2]
-    Click Element    xpath=(//button[@data-element-name='jump-nav-cheapest-room-btn'])[2]
-    Click Element    xpath=(//div[@class='Box-sc-kv6pi1-0 iyqcnt ChildRoomsList-reserveNow'])[1]
     Sleep    3
 
-Fill Guest Details And Continue
+    Wait Until Element Is Visible    xpath=(//button[@data-element-name='jump-nav-cheapest-room-btn'])[2]
+    Click Element    xpath=(//button[@data-element-name='jump-nav-cheapest-room-btn'])[2]
+    Sleep    3
+    Click Element    xpath=(//button[contains(@data-element-name,'book-btn')])[1]
+
+    Sleep    5
+
     Wait Until Element Is Visible    xpath=//button[@actiontype='button']
     Click Element    xpath=//button[@actiontype='button']
+    Sleep    3
+
+
     Wait Until Element Is Enabled    xpath=//input[@id='contact.contactFirstName']
-    Input Text    xpath=//input[@id='contact.contactFirstName']    ATS
-    Input Text    xpath=//input[@id='contact.contactLastName']     STA
-    Input Text    xpath=//input[@id='contact.contactEmail']        ats12@gmail.com
+    Input Text    xpath=//input[@id='contact.contactFirstName']    ATP
+    Input Text    xpath=//input[@id='contact.contactLastName']    STK
+    Wait Until Element Is Visible    xpath=//input[@id='contact.contactEmail']
+    Input Text    xpath=//input[@id='contact.contactEmail']    ats012@gmail.com
+
     Wait Until Element Is Visible    xpath=//button[@data-testid='shimmer-cta']
     Click Element    xpath=//button[@data-testid='shimmer-cta']
     Sleep    10
